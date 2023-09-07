@@ -20,9 +20,8 @@ $$
 
 DDNN training loss converges faster as the WA batch size $b_{w}$ gets larger and the CC $R$ gets smaller. The convergence rate slows down as more workers are provisioned. Moreover, DDNN training loss is inversely proportional to the normalized iterations $j$. Accordingly, we empirically model the training loss in a heterogeneous cluster as
 
-
 $$
-{f}_{loss}\left(b_{w}, R, \mathcal{N}, j\right) = \frac{\left(\gamma_2  \cdot  b_{w}  +  \gamma_3\right) \sqrt{\left(R  +  \gamma_4\right) |\mathcal{N}|}}{j+\gamma_1} + \gamma_5
+f_{loss}\left(b_{w}, R, \mathcal{N}, j\right) = \frac{\left(\gamma_2  \cdot  b_{w}  +  \gamma_3\right) \sqrt{\left(R  +  \gamma_4\right) |\mathcal{N}|}}{j+\gamma_1} + \gamma_5
 $$
 
 In a heterogeneous cluster, $b_{w}$ is calculated as the ratio of trained data samples per unit time to iterations trained per unit time.  In particular, the amount of data samples trained per unit time is considered as the cluster training speed (i.e., $v$). The number of iterations trained per unit time can be identified as the *reciprocal* of the expected iteration time (i.e., $T_{exp}$). Accordingly, we formulate the WA batch size bw as
@@ -52,12 +51,12 @@ The objective is to minimize the monetary cost of provisioned spot instances, wh
 
 
 $$
-\begin{array}{ll}
-\min _{\mathcal{N}} & C=T \cdot \sum_{m \in \mathcal{M}} n_m \cdot p_m \\
-\text { s.t. } & {f}_{loss}\left(b_{w}, R, \mathcal{N}, j\right)=L_{obj}, \\
-& T \leq T_{obj}, \\
-& n_m \leq  Lim _m, \quad \forall m \in \mathcal{M}, n_m \in \mathcal{Z}
-\end{array}
+\begin{aligned}
+\min_{\mathcal{N}} & \quad C=T \cdot \sum_{m \in \mathcal{M}} n_m \cdot p_m \\
+\text { s.t. } & \quad f_{loss}\left(b_{w}, R, \mathcal{N}, j\right)=L_{obj}, \\
+& \quad T \leq T_{obj}, \\
+& \quad n_m \leq  Lim_m, \quad \forall m \in \mathcal{M}, n_m \in \mathcal{Z}
+\end{aligned}
 $$
 
 ## Getting Started
