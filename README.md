@@ -142,3 +142,18 @@ $ pip install -r requirements.txt
    ```
 
 After you run the script, you will get the training cluster information  in `spotDNN/launcher/instancesInfo` which is a *.txt* file, and the training results in `spotDNN/launcher/result`, which contains files copied from different instances. 
+
+## Publication
+
+Ruitao Shang, Fei Xu*, Zhuoyan Bai, Li Chen, Zhi Zhou, Fangming Liu, “[spotDNN: Provisioning Spot Instances for Predictable Distributed DNN Training in the Cloud](https://ieeexplore.ieee.org/abstract/document/10188717),” in: Proc. of IEEE/ACM IWQoS 2023, June 19-21, 2023.
+
+```
+@inproceedings{shang2023spotdnn,
+  title={spotDNN: Provisioning Spot Instances for Predictable Distributed DNN Training in the Cloud},
+  author={Shang, Ruitao and Xu, Fei and Bai, Zhuoyan and Chen, Li and Zhou, Zhi and Liu, Fangming},
+  booktitle={2023 IEEE/ACM 31st International Symposium on Quality of Service (IWQoS)},
+  pages={1--10},
+  year={2023},
+  organization={IEEE}
+}
+```
